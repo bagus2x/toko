@@ -114,10 +114,8 @@ class CameraState(
 
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val uri = outputFileResults.savedUri
-                    Timber.i("onImageSaved uri $uri")
                     if (uri != null) {
                         val file = UriUtils.convertUriToFile(context, uri)
-                        Timber.i("onImageSaved file $file ${file.exists()}")
                         onImageCaptured(file)
                     } else {
                         onError(RuntimeException("Uri is null"))
