@@ -133,24 +133,14 @@ fun StoreScreen(
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
-                            .constrainAs(photoRef) {
-                                start.linkTo(parent.start)
-                                top.linkTo(parent.top)
-                                end.linkTo(parent.end)
-                                height = Dimension.value(statusBarHeight + 300.dp)
-                            }
+                            .fillMaxSize()
                             .background(Color.Gray)
                     )
                 } else {
                     CameraView(
                         cameraState = cameraState,
                         modifier = Modifier
-                            .constrainAs(photoRef) {
-                                start.linkTo(parent.start)
-                                top.linkTo(parent.top)
-                                end.linkTo(parent.end)
-                                height = Dimension.value(statusBarHeight + 300.dp)
-                            }
+                            .fillMaxSize()
                             .background(Color.Gray)
                     )
                 }
