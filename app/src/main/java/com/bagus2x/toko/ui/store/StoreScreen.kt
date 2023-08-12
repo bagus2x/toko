@@ -198,9 +198,7 @@ fun StoreScreen(
                 horizontalArrangement = Arrangement.spacedBy(12.dp, alignment = Alignment.End)
             ) {
                 CoolIconButton(
-                    onClick = {
-
-                    }
+                    onClick = navigateUp
                 ) {
                     Icon(
                         imageVector = Icons.Rounded.Navigation,
