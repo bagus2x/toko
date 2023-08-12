@@ -8,7 +8,6 @@ import com.bagus2x.toko.model.Location
 import com.bagus2x.toko.model.Store
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -22,7 +21,7 @@ import kotlinx.coroutines.launch
 import java.text.DecimalFormat
 import javax.inject.Inject
 
-@OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class StoreListViewModel @Inject constructor(
     storeRepository: StoreRepository,
@@ -59,7 +58,7 @@ class StoreListViewModel @Inject constructor(
         }
     }
 
-    private suspend fun updateDistance(store: Store, myLocation: Location): Store {
+    private fun updateDistance(store: Store, myLocation: Location): Store {
         val storeLat = store.latitude?.toDoubleOrNull()
         val storeLng = store.longitude?.toDoubleOrNull()
         return if (storeLat == null || storeLng == null) {
