@@ -153,7 +153,9 @@ fun DashboardScreen(
             }
             Button(
                 onClick = finish,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
             ) {
                 Text(text = stringResource(R.string.text_finish))
             }
